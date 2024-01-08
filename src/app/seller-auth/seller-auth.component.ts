@@ -10,12 +10,15 @@ import { Router } from '@angular/router';
 })
 export class SellerAuthComponent {
   constructor(private seller:SellerService,private router:Router){}
+  showlogin = false;
    signUp(data:object):void{
      console.log(data);
-     this.seller.userSignup(data).subscribe(result=>{
-      if(result){
-        this.router.navigate(['seller-home']);    
-      }
-     })
+     this.seller.userSignup(data);
+   }
+   openlogin(){
+     this.showlogin = true;
+   }
+   opensignup(){
+    this.showlogin = false;
    }
 }
