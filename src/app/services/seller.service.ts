@@ -14,8 +14,12 @@ export class SellerService {
       console.log("res",result);
        localStorage.setItem("idss","true")
        this.router.navigate(['seller-home']);
-       
-    });
+       });
     localStorage.setItem("idss","false");
+  }
+  userLogin(data:any){
+    this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`).subscribe(result=>{
+      console.log(result,"logindata")
+    })
   }
 }

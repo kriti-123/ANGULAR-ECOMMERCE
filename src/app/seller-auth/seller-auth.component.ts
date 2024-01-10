@@ -15,10 +15,14 @@ export class SellerAuthComponent {
      console.log(data);
      this.seller.userSignup(data);
    }
+   login(data:object):void{
+    this.seller.userLogin(data);
+   }
    openlogin(){
      this.showlogin = true;
    }
    opensignup(){
     this.showlogin = false;
    }
+   
 }

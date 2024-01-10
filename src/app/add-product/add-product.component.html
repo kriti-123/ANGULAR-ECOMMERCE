@@ -1,0 +1,22 @@
+<!-- index.html -->
+<div class="container">
+    <h2>Add Product</h2>
+    <form class="add-product-form" id="productForm" #addProduct = ngForm (ngSubmit)="onAddProduct(addProduct.value)">
+      <label for="name">Product Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="description">Product Description:</label>
+      <textarea id="description" name="description" ngModel required></textarea>
+
+      <label for="price">Product Price:</label>
+      <input type="number" id="price" name="price"ngModel required>
+
+      <label for="proUrl">Product url</label>
+      <input type="text" id="proUrl" name="productUrl"ngModel required>
+
+      <label for="seller">Seller:</label>
+      <input type="text" id="seller" name="seller"ngModel required>
+
+      <button type="submit">Add Product</button>
+    </form>
+  </div>

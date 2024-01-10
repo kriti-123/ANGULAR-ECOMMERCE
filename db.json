@@ -53,6 +53,28 @@
       "password": "klop@",
       "email": "klop@gmail.com",
       "id": 9
+    },
+    {
+      "email": "kriti@gmail.com",
+      "password": "abc",
+      "id": 10
+    },
+    {
+      "email": "kriti@gmail.com",
+      "password": "abc",
+      "id": 11
+    },
+    {
+      "name": "ooo",
+      "password": "ooo",
+      "email": "oo@gmail.com",
+      "id": 12
+    },
+    {
+      "name": "jko",
+      "password": "jko",
+      "email": "jko@gmail.com",
+      "id": 13
     }
   ]
 }
