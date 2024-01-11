@@ -15,7 +15,7 @@ export class SellerAuthComponent {
      console.log(data);
      this.seller.userSignup(data);
    }
-   login(data:object):void{
+   signIn(data:object):void{
     this.seller.userLogin(data);
    }
    openlogin(){

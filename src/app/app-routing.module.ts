@@ -23,13 +23,14 @@ const routes: Routes = [
     canActivate:[authGuard]
   },
   {
-    path:'add-product',
+    path:'seller-add-product',
     component:AddProductComponent,
     // canActivate:[authGuard]
   },
   {
     path:'app-product-list',
-    component:SellerProductListComponent
+    component:SellerProductListComponent,
+    // canActivate:[authGuard]
   }
 ];
 

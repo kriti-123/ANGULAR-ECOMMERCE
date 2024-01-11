@@ -16,6 +16,10 @@ export class HeaderComponent {
           console.log('seller menu')
            this.menuType = 'seller'
         }
+        else if(localStorage.getItem("email")&&val.url.includes('seller')){
+          console.log('seller menu')
+           this.menuType = 'seller'
+        }
         else{
           this.menuType = 'default'
           console.log("default menu")
