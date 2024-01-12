@@ -1,2 +1,14 @@
-<app-seller-product-list></app-seller-product-list>
-<h1>Products goes here..</h1>
+<div class="container p-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+    <div *ngFor="let item of productListArr" class="col hoverEffect">
+      <div class="card h-100 hoverEffect">
+        <img src="{{ item.productUrl }}" class="card-img-top img-fluid" alt="{{ item.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text"><strong>Price: ${{ item.price }}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
