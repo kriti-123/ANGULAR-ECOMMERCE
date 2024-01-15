@@ -15,4 +15,10 @@ export class ProductService {
   productList(){
     return this.http.get<product[]>('http://localhost:3000/products');
   }
+  deleteProductWithId(id:number){
+    return this.http.delete(`http://localhost:3000/products/${id}`);
+  }
+  popularProducts(){
+    return this.http.get<product[]>('http://localhost:3000/products?_limit=3');
+  }
 }

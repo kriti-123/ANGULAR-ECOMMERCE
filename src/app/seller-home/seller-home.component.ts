@@ -10,7 +10,17 @@ import { product } from '../data-type';
 export class SellerHomeComponent{
   productListArr: undefined|product[];
   constructor(private product:ProductService){
-  // ngOnInIt(){
+    this.list();
+  }
+  deleteProduct(id:number){
+    this.product.deleteProductWithId(id).subscribe((result)=>{
+      console.log(result,"deleted");
+      this.list();
+      
+    });
+    console.log(id);
+  }
+  list(){
     this.product.productList().subscribe((result)=>{
       console.log(result,"products list here");
       this.productListArr = result;

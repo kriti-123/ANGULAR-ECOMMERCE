@@ -34,7 +34,7 @@ export class SellerService {
     setTimeout(()=>{
       localStorage.clear();
       this.router.navigate(['sellerAuth'])
-    },90000)
+    },900000)
   }
   
 }

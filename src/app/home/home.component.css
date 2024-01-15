@@ -1,0 +1,29 @@
+
+  #halfScreenCarousel {
+    width: 100vw;
+    height:50vh;
+    margin: 0 auto; /* Center the carousel on the page */
+  }
+
+  /* Optional: Adjust the height of the carousel */
+  #halfScreenCarousel .carousel-inner {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 50vh;
+    /* border:5px solid yellow;  */
+  }
+  
+  #halfScreenCarousel .carousel-item  {
+    width:100%;
+    height:100%;
+    /* border:10px solid red; */
+     /* Make sure the entire image is visible, cropping as needed */
+     /* Ensure the item takes the full height of the carousel */
+  }
+  #halfScreenCarousel .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+
