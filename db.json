@@ -178,7 +178,22 @@
       "productUrl": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "seller": "pathak",
       "id": 10
+    },
+    {
+      "name": "microwave",
+      "description": "Bajaj oven grill",
+      "price": 34000,
+      "productUrl": "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "seller": "kriti",
+      "id": 11
+    },
+    {
+      "name": "home appliances",
+      "description": "home ",
+      "price": 78000,
+      "productUrl": "https://media.istockphoto.com/id/827098826/photo/home-appliances-household-kitchen-technics-in-the-empty-room.jpg?s=2048x2048&w=is&k=20&c=-x0KGpoIuMmCKPerpgDAvW3uBQDayFcdTUsjnKY1GEY=",
+      "seller": "kriti",
+      "id": 12
     }
-
   ]
 }
