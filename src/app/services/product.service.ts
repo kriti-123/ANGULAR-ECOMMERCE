@@ -21,4 +21,7 @@ export class ProductService {
   popularProducts(){
     return this.http.get<product[]>('http://localhost:3000/products?_limit=3');
   }
+  searchProduct(query:string){
+    return this.http.get<product[]>(`http://localhost:3000/products?q=${query}`);
+  }
 }

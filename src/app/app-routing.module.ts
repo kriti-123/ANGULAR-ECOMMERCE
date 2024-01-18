@@ -7,35 +7,40 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { authGuard } from './auth.guard';
 import { AddProductComponent } from './add-product/add-product.component';
 import { SellerProductListComponent } from './seller-product-list/seller-product-list.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path:'sellerAuth',
-    component:SellerAuthComponent
+    path: 'sellerAuth',
+    component: SellerAuthComponent,
   },
   {
-    path:'seller-home',
-    component:SellerHomeComponent,
-    canActivate:[authGuard]
+    path: 'seller-home',
+    component: SellerHomeComponent,
+    canActivate: [authGuard],
   },
   {
-    path:'seller-add-product',
-    component:AddProductComponent,
+    path: 'seller-add-product',
+    component: AddProductComponent,
     // canActivate:[authGuard]
   },
   {
-    path:'app-product-list',
-    component:SellerProductListComponent,
+    path: 'app-product-list',
+    component: SellerProductListComponent,
     // canActivate:[authGuard]
-  }
+  },
+  {
+    path: 'search/:query',
+    component: SearchComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

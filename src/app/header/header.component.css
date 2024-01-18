@@ -1,10 +1,36 @@
 .navbar-dark .navbar-nav .nav-link {
-    color: white !important;
-  }
+  color: white !important;
+}
 
-  /* Custom styles for changing active link color */
-  .navbar-dark .navbar-nav .nav-item.active .nav-link,
-  .navbar-dark .navbar-nav .nav-link:hover {
-    color: #28a745 !important; /* Change to your desired hover color */
-  }
-  
+.navbar-dark .navbar-nav .nav-item.active .nav-link,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #28a745 !important;
+}
+.suggestionList {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 300px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+.suggestionList li {
+  list-style: none;
+  /* border: 1px solid #ddd; */
+}
+.suggestionList li a {
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+}
+.suggestionList li:hover {
+  background-color: #f0f0f0;
+}

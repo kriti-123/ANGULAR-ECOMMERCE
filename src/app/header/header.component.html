@@ -35,39 +35,114 @@
       </div>
     </div>
   </nav> -->
-  <nav class="navbar bg-dark navbar-expand-lg">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<nav class="navbar bg-dark navbar-expand-lg">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      [ngSwitch]="menuType"
+      class="collapse navbar-collapse"
+      id="navbarTogglerDemo01"
+    >
+      <a class="navbar-brand" style="color: white" routerLink="/">KKcom</a>
+      <ul *ngSwitchCase="'default'" class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            style="color: white"
+            aria-current="page"
+            routerLink=""
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" routerLink="sellerAuth"
+            >Seller</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" href="#">Cart(0)</a>
+        </li>
+      </ul>
+      <ul *ngSwitchCase="'seller'" class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            style="color: white"
+            routerLink="seller-add-product"
+            >Add products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" routerLink="/">Profile</a>
+        </li>
+      </ul>
+      <form class="d-flex formcustom ms-auto" role="search">
+        <input
+          #searchInput
+          class="form-control me-2"
+          (keyup)="searchProduct($event)"
+          (blur)="hideSerchResult()"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-success"
+          type="submit"
+          (click)="submitSearch(searchInput.value)"
+        >
+          Search
         </button>
-        <div [ngSwitch]="menuType" class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" style="color:white" routerLink="/">KKcom</a>
-            <ul *ngSwitchCase="'default'" class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" style="color:white" aria-current="page" routerLink = "">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"style="color:white" href="#">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"style="color:white" routerLink = "sellerAuth">Seller</a>
-              </li>
-              <li class="nav-item">   
-                <a class="nav-link"style="color:white" href="#">Cart(0)</a>
-              </li>
-            </ul>
-            <ul *ngSwitchCase="'seller'" class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link"style="color:white" routerLink="seller-add-product">Add products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"style="color:white" routerLink = "/">Profile</a>
-              </li>
-            </ul>
-            <form class="d-flex formcustom ms-auto" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
+      </form>
     </div>
+  </div>
+  <ul class="suggestionList" *ngIf="searchResult">
+    <li *ngFor="let item of searchResult">
+      <a>{{ item.name }}</a>
+    </li>
+  </ul>
 </nav>
+<!-- show search result -->
+<!-- <div class="container p-4"> -->
+<!-- <h3 style="text-align: center">Search Result Goes here...</h3> -->
+
+<!-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+    <div *ngFor="let item of searchResult" class="col hoverEffect">
+      <div class="card h-100 hoverEffect cardSize">
+        <img
+          src="{{ item.productUrl }}"
+          class="card-img-top"
+          alt="{{ item.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text">
+            <strong>Price: ${{ item.price }}</strong>
+          </p>
+          <div class="card-actions d-flex justify-content-between">
+            <button class="btn btn-light">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn-light">
+              <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!-- </div> -->
