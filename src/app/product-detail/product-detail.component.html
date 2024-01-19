@@ -1,0 +1,94 @@
+<div class="product-detail" *ngIf="product">
+  <div class="image-section"><img src="{{ product.productUrl }}" alt="" /></div>
+  <div class="description-section">
+    <h4>{{ product.name }}</h4>
+    <h4>Price: {{ product.price }}</h4>
+    <h5>Description: {{ product.description }}</h5>
+    <div>
+      <h5>color:</h5>
+      <h6 [style.backgroundColor]="product.color" class="colorBox"></h6>
+    </div>
+    <h6>Quantity: 6</h6>
+    <div style="border: 0px solid black; width: fit-content">
+      <button
+        style="
+          text-align: center;
+          width: 3rem;
+          height: 2.4rem;
+          background-color: black;
+          border-radius: 10%;
+          color: white;
+          margin: 0.4rem 0 0.3rem 0;
+        "
+      >
+        -
+      </button>
+      <input
+        type="text"
+        value="1"
+        style="
+          width: 3rem;
+          height: 2.2rem;
+          border-radius: 10%;
+          margin: 0.3rem 0 0 1rem;
+        "
+      />
+      <button
+        style="
+          text-align: center;
+          width: 3rem;
+          height: 2.4rem;
+          background-color: black;
+          border-radius: 10%;
+          color: white;
+          margin: 0.4rem 1rem 1rem 1rem;
+        "
+      >
+        +
+      </button>
+    </div>
+    <div>
+      <button
+        class=""
+        style="
+          text-align: center;
+          width: 6rem;
+          height: 2.4rem;
+          background-color: black;
+          border-radius: 7%;
+          color: white;
+        "
+      >
+        Add to cart
+      </button>
+      <button
+        style="
+          text-align: center;
+          width: 6rem;
+          height: 2.4rem;
+          background-color: black;
+          border-radius: 7%;
+          color: white;
+          margin-left: 1rem;
+        "
+      >
+        Buy now
+      </button>
+    </div>
+
+    <ul class="bank-offer">
+      <br />
+      <a
+        href="#"
+        style="margin-left: -3rem; color: rgb(24, 8, 8); font-weight: bolder"
+        >Bank Offers</a
+      >
+      <li>SBI offer:flat 10% off on buying 2000 and above.</li>
+      <li>
+        SBI offer:flat 10% off on buying 2000 and above.SBI offer:flat 10% off
+      </li>
+      <li>SBI offer:flat 10% off on buying 2000 and above.SBI offer:flat</li>
+      <li>SBI offer:flat 10% off on buying 2000 and above.</li>
+    </ul>
+  </div>
+</div>

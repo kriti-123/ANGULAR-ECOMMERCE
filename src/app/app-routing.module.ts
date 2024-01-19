@@ -8,6 +8,7 @@ import { authGuard } from './auth.guard';
 import { AddProductComponent } from './add-product/add-product.component';
 import { SellerProductListComponent } from './seller-product-list/seller-product-list.component';
 import { SearchComponent } from './search/search.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'search/:query',
     component: SearchComponent,
+  },
+  {
+    path: 'detail/:productId',
+    component: ProductDetailComponent,
   },
 ];
 

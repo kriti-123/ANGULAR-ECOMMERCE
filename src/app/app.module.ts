@@ -13,6 +13,7 @@ import { SellerProductListComponent } from './seller-product-list/seller-product
 import { AddProductComponent } from './add-product/add-product.component';
 import { CategoryComponent } from './category/category.component';
 import { SearchComponent } from './search/search.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchComponent } from './search/search.component';
     SellerProductListComponent,
     AddProductComponent,
     CategoryComponent,
-    SearchComponent
+    SearchComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
