@@ -202,5 +202,61 @@
       "color": "blue",
       "id": 12
     }
+  ],
+  "user": [
+    {
+      "name": "kk pathak",
+      "password": "kkk",
+      "email": "kkkk@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "p",
+      "password": "p",
+      "email": "p@test.com",
+      "id": 2
+    },
+    {
+      "name": "p",
+      "password": "p",
+      "email": "p@test.com",
+      "id": 3
+    },
+    {
+      "name": "pp",
+      "password": "pp",
+      "email": "pp@test.com",
+      "id": 4
+    },
+    {
+      "name": "jio",
+      "password": "jio",
+      "email": "jio@test.com",
+      "id": 5
+    },
+    {
+      "name": "iop",
+      "password": "IOP",
+      "email": "iop@test.com",
+      "id": 6
+    },
+    {
+      "name": "kri",
+      "password": "kri",
+      "email": "kri@test.com",
+      "id": 7
+    },
+    {
+      "name": "j",
+      "password": "jk",
+      "email": "jk@test.com",
+      "id": 8
+    },
+    {
+      "name": "kiop",
+      "password": "123",
+      "email": "a@gmail.com",
+      "id": 9
+    }
   ]
 }

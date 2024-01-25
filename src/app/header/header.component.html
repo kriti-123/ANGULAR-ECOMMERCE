@@ -1,40 +1,3 @@
-<!-- <nav class="navbar bg-dark navbar-expand-lg">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div [ngSwitch] = "menuType" class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand"style="color:white" routerLink = "/">KKcom</a>
-        <ul *ngSwitchCase = "'default'"class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" style="color:white" aria-current="page" routerLink = "">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"style="color:white" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"style="color:white" routerLink = "sellerAuth">Seller</a>
-          </li>
-          <li class="nav-item">   
-            <a class="nav-link"style="color:white" href="#">Cart(0)</a>
-          </li>
-          <form class="d-flex formcustom" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </ul>
-        <ul *ngSwitchCase = "'seller'"class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link"style="color:white" routerLink="seller-add-product">Add products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"style="color:white" routerLink = "/">Profile</a>
-          </li>
-        </ul>
-       
-      </div>
-    </div>
-  </nav> -->
 <nav class="navbar bg-dark navbar-expand-lg">
   <div class="container-fluid">
     <button
@@ -65,7 +28,9 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color: white" href="#">Login</a>
+          <a class="nav-link" style="color: white" routerLink="userAuth"
+            >Login</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" style="color: white" routerLink="sellerAuth"
@@ -87,6 +52,17 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" style="color: white" routerLink="/">Profile</a>
+        </li>
+      </ul>
+      <ul *ngSwitchCase="'user'" class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" style="color: white">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white">logout</a>
+        </li>
+        <li class="nav-item" style="color: white">
+          <a class="nav-link" style="color: white">hello {{ userName }}!!</a>
         </li>
       </ul>
       <form class="d-flex formcustom ms-auto" role="search">
@@ -111,7 +87,7 @@
   </div>
   <ul class="suggestionList" *ngIf="searchResult">
     <li *ngFor="let item of searchResult">
-      <a>{{ item.name }}</a>
+      <a (mousedown)="gotoPd(item.id)">{{ item.name }}</a>
     </li>
   </ul>
 </nav>

@@ -11,6 +11,7 @@ import { product } from '../data-type';
 export class HeaderComponent {
   searchResult: undefined | product[];
   menuType: String = 'default';
+  userName: string = '';
   constructor(
     private route: Router,
     private seller: SellerService,
@@ -19,9 +20,19 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
+        console.log('opopopo', val.url);
+
         if (localStorage.getItem('idss') && val.url.includes('seller')) {
           console.log('seller menu');
           this.menuType = 'seller';
+        } else if (val.url.includes('user')) {
+          let userData = localStorage.getItem('data');
+          // let userd = userData && JSON.parse(userData);
+          // this.userName = userd.name;
+          // console.log('yuoi', userd);
+
+          this.menuType = 'user';
+          console.log('user-menu');
         } else if (
           localStorage.getItem('email') &&
           val.url.includes('seller')
@@ -30,7 +41,7 @@ export class HeaderComponent {
           this.menuType = 'seller';
         } else {
           this.menuType = 'default';
-          console.log('default menu');
+          console.log('default menuOOOOO');
         }
       }
     });
@@ -52,5 +63,8 @@ export class HeaderComponent {
   }
   submitSearch(val: string) {
     this.route.navigate([`search/${val}`]);
+  }
+  gotoPd(id: number) {
+    this.route.navigate(['/detail/' + id]);
   }
 }
