@@ -20,28 +20,24 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
-        console.log('opopopo', val.url);
+        console.log('got this url', val.url);
 
-        if (localStorage.getItem('idss') && val.url.includes('seller')) {
+        if (val.url.includes('seller') && localStorage.getItem('selerdata')) {
           console.log('seller menu');
           this.menuType = 'seller';
-        } else if (val.url.includes('user')) {
-          let userData = localStorage.getItem('data');
-          // let userd = userData && JSON.parse(userData);
-          // this.userName = userd.name;
-          // console.log('yuoi', userd);
-
+          let userStore = localStorage.getItem('selerdata');
+          let userData = userStore && JSON.parse(userStore);
+          this.userName = userData.name;
+          this.menuType = 'seller';
+        } else if (localStorage.getItem('data')) {
+          let userStore = localStorage.getItem('data');
+          let userData = userStore && JSON.parse(userStore);
+          this.userName = userData.name;
           this.menuType = 'user';
-          console.log('user-menu');
-        } else if (
-          localStorage.getItem('email') &&
-          val.url.includes('seller')
-        ) {
-          console.log('seller menu');
-          this.menuType = 'seller';
+          console.log(userData.name);
         } else {
           this.menuType = 'default';
-          console.log('default menuOOOOO');
+          console.log('default menu');
         }
       }
     });

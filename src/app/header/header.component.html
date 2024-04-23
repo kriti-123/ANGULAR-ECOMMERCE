@@ -16,7 +16,7 @@
       class="collapse navbar-collapse"
       id="navbarTogglerDemo01"
     >
-      <a class="navbar-brand" style="color: white" routerLink="/">KKcom</a>
+      <!-- <a class="navbar-brand" style="color: white" routerLink="/">KKcom</a> -->
       <ul *ngSwitchCase="'default'" class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
@@ -50,6 +50,9 @@
             >Add products</a
           >
         </li>
+        <li class="nav-item" style="color: white">
+          <a class="nav-link" style="color: white">{{ userName }}</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" style="color: white" routerLink="/">Profile</a>
         </li>
@@ -62,7 +65,7 @@
           <a class="nav-link" style="color: white">logout</a>
         </li>
         <li class="nav-item" style="color: white">
-          <a class="nav-link" style="color: white">hello {{ userName }}!!</a>
+          <a class="nav-link" style="color: white">{{ userName }}</a>
         </li>
       </ul>
       <form class="d-flex formcustom ms-auto" role="search">

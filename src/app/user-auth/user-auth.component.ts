@@ -18,17 +18,11 @@ export class UserAuthComponent implements OnInit {
     this.user.userSignup(data);
   }
   signIn(data: signUp): void {
-    this.user.userLogin(data).subscribe((result) => {
-      if (result) {
-        localStorage.setItem('email', result);
-        localStorage.setItem('pass', result);
-      }
-      this.route.navigate(['/']);
-    });
-    setTimeout(() => {
-      localStorage.clear();
-      this.route.navigate(['userAuth']);
-    }, 10000);
+    this.user.userLogin(data);
+    // setTimeout(() => {
+    //   localStorage.clear();
+    //   this.route.navigate(['userAuth']);
+    // }, 10000);
   }
   openlogin() {
     this.showlogin = true;

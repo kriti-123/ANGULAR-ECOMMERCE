@@ -128,6 +128,30 @@
       "password": "kat",
       "email": "kat@test.com",
       "id": 22
+    },
+    {
+      "name": "kkkk",
+      "password": "1234",
+      "email": "KKKK@gmail.com",
+      "id": 23
+    },
+    {
+      "name": "SELLER",
+      "password": "1234",
+      "email": "SELER@GMAIL.COM",
+      "id": 24
+    },
+    {
+      "name": "k",
+      "password": "1234",
+      "email": "s@test.com",
+      "id": 25
+    },
+    {
+      "name": "as",
+      "password": "1234",
+      "email": "as@test.com",
+      "id": 26
     }
   ],
   "products": [
@@ -257,6 +281,18 @@
       "password": "123",
       "email": "a@gmail.com",
       "id": 9
+    },
+    {
+      "name": "PK",
+      "password": "1234",
+      "email": "PK@TEST.COM",
+      "id": 10
+    },
+    {
+      "name": "K",
+      "password": "1234",
+      "email": "K@TEST.COM",
+      "id": 11
     }
   ]
 }
