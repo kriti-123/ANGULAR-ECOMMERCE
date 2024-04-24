@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.Invalid-input {
+  color: red;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+* {
+  /* background-color: black; */
+  /* color: black; */
+}
+body {
+  background-color: #000; /* black color */
+  color: #fff; /* text color */
+}

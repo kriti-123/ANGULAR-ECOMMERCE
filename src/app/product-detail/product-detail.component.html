@@ -10,7 +10,8 @@
     </div>
     <h6>Quantity: 6</h6>
     <div style="border: 0px solid black; width: fit-content">
-      <button (click)="handleQuantity('dec')"
+      <button
+        (click)="handleQuantity('dec')"
         style="
           text-align: center;
           width: 3rem;
@@ -25,7 +26,7 @@
       </button>
       <input
         type="text"
-        value="{{productQty}}"
+        value="{{ productQty }}"
         style="
           width: 3rem;
           height: 2.2rem;
@@ -33,7 +34,8 @@
           margin: 0.3rem 0 0 1rem;
         "
       />
-      <button (click)="handleQuantity('inc')"
+      <button
+        (click)="handleQuantity('inc')"
         style="
           text-align: center;
           width: 3rem;
@@ -49,6 +51,7 @@
     </div>
     <div>
       <button
+        *ngIf="!removeCart"
         class=""
         style="
           text-align: center;
@@ -58,8 +61,24 @@
           border-radius: 7%;
           color: white;
         "
+        (click)="addToCart()"
       >
         Add to cart
+      </button>
+      <button
+        *ngIf="removeCart"
+        class=""
+        style="
+          text-align: center;
+          width: 6rem;
+          height: 2.4rem;
+          background-color: black;
+          border-radius: 7%;
+          color: white;
+        "
+        (click)="removeToCart(product.id)"
+      >
+        Remove to cart
       </button>
       <button
         style="

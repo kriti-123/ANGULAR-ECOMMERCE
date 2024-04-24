@@ -10,7 +10,11 @@
       ngModel
       placeholder="Enter your name"
       required
+      #name="ngModel"
     />
+    <p class="Invalid-input">
+      <span *ngIf="name.invalid && name.touched">*enter the name</span>
+    </p>
 
     <label for="password">Password:</label>
     <input
@@ -20,7 +24,13 @@
       ngModel
       placeholder="Enter your password"
       required
+      #password="ngModel"
     />
+    <p class="Invalid-input">
+      <span *ngIf="password.invalid && password.touched"
+        >*enter the password</span
+      >
+    </p>
 
     <label for="email">Email:</label>
     <input
@@ -30,7 +40,11 @@
       ngModel
       placeholder="Enter your email"
       required
+      #email="ngModel"
     />
+    <p class="Invalid-input">
+      <span *ngIf="email.invalid && email.touched">*enter the email</span>
+    </p>
 
     <input type="submit" value="Submit" />
     <a class="toggleLink" (click)="openlogin()"
@@ -48,7 +62,11 @@
       ngModel
       placeholder="Enter your email"
       required
+      #email="ngModel"
     />
+    <p class="Invalid-input">
+      <span *ngIf="email.invalid && email.touched">*enter the email</span>
+    </p>
 
     <label for="password">Password:</label>
     <input
@@ -58,7 +76,13 @@
       ngModel
       placeholder="Enter your password"
       required
+      #password="ngModel"
     />
+    <p class="Invalid-input">
+      <span *ngIf="password.invalid && password.touched"
+        >*enter the password</span
+      >
+    </p>
 
     <input type="submit" value="Submit" />
     <a class="toggleLink" (click)="opensignup()">Don't have account signup</a>

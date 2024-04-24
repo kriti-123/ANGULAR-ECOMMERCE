@@ -17,7 +17,10 @@
       id="navbarTogglerDemo01"
     >
       <!-- <a class="navbar-brand" style="color: white" routerLink="/">KKcom</a> -->
-      <ul *ngSwitchCase="'default'" class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul
+        *ngSwitchCase="'default'"
+        class="navbar-nav me-auto mb-2 mb-lg-0 listNav"
+      >
         <li class="nav-item">
           <a
             class="nav-link active"
@@ -38,7 +41,9 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color: white" href="#">Cart(0)</a>
+          <a class="nav-link" style="color: white" href="#"
+            >Cart({{ cartItem }})</a
+          >
         </li>
       </ul>
       <ul *ngSwitchCase="'seller'" class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -56,13 +61,20 @@
         <li class="nav-item">
           <a class="nav-link" style="color: white" routerLink="/">Profile</a>
         </li>
+        <li class="nav-item">
+          <a (click)="sellerlogout()" class="nav-link" style="color: white"
+            >logout</a
+          >
+        </li>
       </ul>
       <ul *ngSwitchCase="'user'" class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" style="color: white">Profile</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" style="color: white">logout</a>
+        <li class="nav-item listNav" (click)="userlogout()">
+          <a (click)="userlogout()" class="nav-link" style="color: white"
+            >logout</a
+          >
         </li>
         <li class="nav-item" style="color: white">
           <a class="nav-link" style="color: white">{{ userName }}</a>
@@ -71,7 +83,7 @@
       <form class="d-flex formcustom ms-auto" role="search">
         <input
           #searchInput
-          class="form-control me-2"
+          class="form-control me-2 ipfield"
           (keyup)="searchProduct($event)"
           (blur)="hideSerchResult()"
           type="search"

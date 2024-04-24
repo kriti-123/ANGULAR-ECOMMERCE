@@ -10,7 +10,8 @@ import { product } from '../data-type';
 })
 export class ProductDetailComponent implements OnInit {
   product: undefined | product;
-  productQty:number=1;
+  productQty: number = 1;
+  removeCart = false;
   constructor(
     private productService: ProductService,
     private activeRoute: ActivatedRoute
@@ -20,18 +21,42 @@ export class ProductDetailComponent implements OnInit {
     id &&
       this.productService.getProduct(id).subscribe((result) => {
         this.product = result;
+        let cartData = localStorage.getItem('cartProducts');
+        if (id && cartData) {
+          let items = JSON.parse(cartData);
+          items = items.filter((item: product) => id == item.id.toString());
+          if (items.length) {
+            console.log('hi got this');
+            this.removeCart = true;
+          } else {
+            console.log('item remove called');
+            this.removeCart = false;
+          }
+        }
       });
   }
-  handleQuantity(op:string){
-    if(op=='inc'){
-      if(this.productQty<10){
+  handleQuantity(op: string) {
+    if (op == 'inc') {
+      if (this.productQty < 10) {
         this.productQty += 1;
       }
-    }
-    else{
-      if(this.productQty>0){
+    } else {
+      if (this.productQty > 0) {
         this.productQty -= 1;
       }
     }
   }
+  addToCart() {
+    if (this.product) {
+      if (!localStorage.getItem('data')) {
+        this.product.quantity = this.productQty;
+        console.log(this.product);
+        this.productService.localAddToCart(this.product);
+        this.removeCart = true;
+      } else {
+        console.log('else block where user is logged in!!!');
+      }
+    }
+  }
+  removeToCart(id: number) {}
 }

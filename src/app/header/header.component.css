@@ -6,11 +6,18 @@
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #28a745 !important;
 }
+.listNav a {
+  word-spacing: 2rem;
+  letter-spacing: 0.3rem;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* border: 1px solid red; */
+}
 .suggestionList {
   position: absolute;
   top: 100%;
   right: 0;
-  width: 300px;
+  width: 35rem;
   max-height: 200px;
   overflow-y: auto;
   background-color: #fff;
@@ -33,4 +40,8 @@
 }
 .suggestionList li:hover {
   background-color: #f0f0f0;
+}
+.ipfield {
+  width: 30rem;
+  /* border: 1px solid red; */
 }

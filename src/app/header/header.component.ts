@@ -12,6 +12,7 @@ export class HeaderComponent {
   searchResult: undefined | product[];
   menuType: String = 'default';
   userName: string = '';
+  cartItem = 0;
   constructor(
     private route: Router,
     private seller: SellerService,
@@ -41,6 +42,14 @@ export class HeaderComponent {
         }
       }
     });
+    let cartData = localStorage.getItem('cartProducts');
+    if (cartData) {
+      let len = JSON.parse(cartData).length;
+      this.cartItem = len;
+    }
+    this.productService.cartData.subscribe((items) => {
+      this.cartItem = items.length;
+    });
   }
   searchProduct(query: KeyboardEvent) {
     if (query) {
@@ -62,5 +71,14 @@ export class HeaderComponent {
   }
   gotoPd(id: number) {
     this.route.navigate(['/detail/' + id]);
+  }
+  sellerlogout() {
+    localStorage.removeItem('selerdata');
+    this.route.navigate(['/sellerAuth']);
+  }
+  userlogout() {
+    console.log('logout usrer called');
+    localStorage.removeItem('data');
+    this.route.navigate(['userAuth']);
   }
 }

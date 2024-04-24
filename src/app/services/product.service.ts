@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { product } from '../data-type';
 
@@ -7,6 +7,7 @@ import { product } from '../data-type';
   providedIn: 'root',
 })
 export class ProductService {
+  cartData = new EventEmitter<product[] | []>();
   constructor(private http: HttpClient, private router: Router) {}
   addProduct(data: product) {
     return this.http.post('http://localhost:3000/products', data);
@@ -27,5 +28,24 @@ export class ProductService {
   }
   getProduct(id: string) {
     return this.http.get<product>(`http://localhost:3000/products/${id}`);
+  }
+
+  localAddToCart(data: product) {
+    let cartData = [];
+    let localCart = localStorage.getItem('cartProducts');
+
+    if (!localCart) {
+      // If no cart data exists in local storage, create a new array with the current product and store it
+      localStorage.setItem('cartProducts', JSON.stringify([data]));
+    } else {
+      // If cart data exists, retrieve it, append the new product, and store it back
+      cartData = JSON.parse(localCart);
+      cartData.push(data);
+      localStorage.setItem('cartProducts', JSON.stringify(cartData));
+    }
+    this.cartData.emit(cartData);
+  }
+  removeItemFromCart() {
+    let cartData = localStorage.getItem('cartProducts');
   }
 }
