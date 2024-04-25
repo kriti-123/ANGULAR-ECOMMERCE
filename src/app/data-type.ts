@@ -24,13 +24,14 @@ export interface cart {
   name: string;
   price: number;
   category: string;
-  color: string;
-  image: string;
+  productUrl: string;
   description: string;
-  id: number | undefined;
+  seller: string;
+  color: string;
+  id: number;
   quantity: undefined | number;
-  productId: number;
   userId: number;
+  productId: number;
 }
 
 export interface priceSummary {

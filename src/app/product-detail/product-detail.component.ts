@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
-import { product } from '../data-type';
+import { cart, product } from '../data-type';
 
 @Component({
   selector: 'app-product-detail',
@@ -55,8 +55,25 @@ export class ProductDetailComponent implements OnInit {
         this.removeCart = true;
       } else {
         console.log('else block where user is logged in!!!');
+        let user = localStorage.getItem('data');
+        let userId = user && JSON.parse(user).id;
+        let cartData: cart = {
+          ...this.product,
+          userId,
+          productId: this.product.id,
+        };
+        console.log(cartData);
+        this.productService.addToCart(cartData).subscribe((result) => {
+          if (result) {
+            console.log('callop');
+            alert('product added to cart...');
+          }
+        });
       }
     }
   }
-  removeToCart(id: number) {}
+  removeToCart(id: number) {
+    this.productService.removeItemFromCart(id);
+    this.removeCart = false;
+  }
 }

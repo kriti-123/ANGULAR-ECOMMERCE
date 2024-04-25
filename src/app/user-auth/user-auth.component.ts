@@ -30,4 +30,12 @@ export class UserAuthComponent implements OnInit {
   opensignup() {
     this.showlogin = false;
   }
+  localCartToRemoteCart() {
+    let data = localStorage.getItem('cartProducts');
+    if (data) {
+      let user = localStorage.getItem('data');
+      let userId = user && JSON.parse(user);
+      let cartDataList = JSON.parse(data);
+    }
+  }
 }
